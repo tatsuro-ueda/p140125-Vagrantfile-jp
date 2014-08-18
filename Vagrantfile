@@ -42,16 +42,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # 3番目の引数は、もし必要になれば使うことのできるオプションである。
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  # 特別なプロバイダの設定をすることで、
-  # Vagrantのための様々なbacking provider（？）に最適化できる。
-  # これらは特別なプロバイダのオプションをさらす（？）
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
+  # 特別なプロバイダ（VirtualBoxとかParallels）の設定をすることで、
+  # Vagrantのための様々な背後で動いているプロバイダに最適化できる。
+  # プロバイダ固有のオプションを変えることができる。
+  # 以下はVirtualBox用の例：
   #
   # config.vm.provider :virtualbox do |vb|
-  #   # ヘッドレス・モード（？）では起動しない
-  #   # Don't boot with headless mode
+  #   # ヘッドレス・モード（ターミナルのみ）では起動しない
   #   vb.gui = true
   #
   #   # VMをカスタマイズするためにVBoxManageを使う。 
